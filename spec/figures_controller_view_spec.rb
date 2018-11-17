@@ -65,7 +65,9 @@ describe FiguresController do
     visit '/figures/new'
     fill_in :figure_name, :with => "Doctor Who"
     fill_in :new_landmark, :with => "The Tardis"
+
     click_button "Create New Figure"
+
     figure = Figure.last
     landmark = Landmark.last
     expect(Figure.all.count).to eq(3)
